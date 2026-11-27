@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATD Harbor Club — 3D Co-op</title>
+<style>
+*{box-sizing:border-box}body{margin:0;overflow:hidden;background:#9bcbd7;font-family:system-ui,"Malgun Gothic",sans-serif;color:#18313c}
+#hud{position:fixed;inset:14px 14px auto 14px;display:flex;justify-content:space-between;gap:12px;pointer-events:none;z-index:5}
+.panel{background:#fffffff0;border:1px solid #ffffff;border-radius:15px;padding:11px 14px;box-shadow:0 5px 20px #254b5b24;pointer-events:auto}
+#brand{font-weight:900;font-size:16px}#status{font-size:12px;color:#42616c;margin-top:3px}
+#ship{min-width:205px;text-align:right}#ship strong{display:block;font-size:14px}#ship span{font-size:12px;color:#47616b}
+#help{position:fixed;bottom:14px;left:14px;max-width:360px;line-height:1.55;font-size:12px}
+#toast{position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#18313ceF;color:white;padding:9px 15px;border-radius:20px;font-size:13px;opacity:0;transition:.2s;pointer-events:none}
+#players{position:fixed;right:14px;top:94px;font-size:12px;line-height:1.5}
+#crosshair{position:fixed;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:#fff;border:1px solid #244653;transform:translate(-50%,-50%);pointer-events:none}
+#start{position:fixed;inset:0;display:grid;place-items:center;background:#17374366;z-index:10}
+#start .panel{max-width:440px;text-align:center;padding:24px}
+button{border:0;background:#197f91;color:white;padding:11px 20px;border-radius:12px;font-weight:800;cursor:pointer;margin-top:12px}
+small{color:#57717a}
+</style>
+</head>
+<body>
+<div id="hud">
+ <div class="panel"><div id="brand">⚓ ATD HARBOR CLUB</div><div id="status">서버 연결 중 · 협동 항구 작업</div></div>
+ <div class="panel" id="ship"><strong>🚢 출항 선박 · BLUE HORIZON</strong><span id="shipline">예정 출항 18:00 · 지연 없음</span></div>
+</div>
+<div class="panel" id="help">WASD 이동 · 마우스 시점 · Shift 달리기 · E 줍기/선박 적용 · G 내려놓기<br>아이템을 들면 이동속도가 느려져요. 다른 플레이어와 함께 작업하세요.</div>
+<div class="panel" id="players">접속 플레이어: 1</div><div id="crosshair"></div><div id="toast"></div>
+<div id="start"><div class="panel"><h2>⚓ ATD 항구 협동 작업</h2><p>3D 항구에서 지연 원인과 해결 아이템을 직접 운반하세요.</p><small>멀티플레이는 같은 서버 주소에 접속한 사람끼리 함께 플레이합니다.</small><br><button id="enter">항구 입장하기</button></div></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="/game.js"></script>
+</body></html>
